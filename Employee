@@ -1,0 +1,55 @@
+// Create Constructor using Employee class
+#include<iostream>
+using namespace std;
+
+class Employee {
+    public:
+    string name;
+    int id;
+    double salary;
+
+    Employee() {
+        name = "xyz";
+        id = 0;
+        salary = 0.0;
+        cout<<"Default construcrtor\n";
+    }
+
+    Employee(string n, int i) {
+        name = n;
+        id = i;
+        salary = 0.0;
+        cout<<"Paramaterized constructor1\n";
+    }
+
+    Employee(string n, int i, double s) {
+        name = n;
+        id = i;
+        salary = s;
+        cout<<"Parameterized constructor2\n";
+    }
+
+    Employee(const Employee &e) {
+        name = e.name;
+        id = e.id;
+        salary = e.salary;
+        cout<<"Copy constructor\n";
+    }
+
+    void display() {
+        cout<<"name: " << name << " id: "<< id << ", salary: " <<salary <<endl; 
+    }
+};
+
+int main() {
+    Employee e1;
+    Employee e2("Santosh", 273);
+    Employee e3("Dharm", 309);
+    Employee e4 = e3;
+
+    e1.display();
+    e2.display();
+    e3.display();
+    e4.display();
+    return 0;
+}
